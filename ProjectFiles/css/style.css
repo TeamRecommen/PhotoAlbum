@@ -178,15 +178,17 @@ a.active-nav {
     cursor: pointer;
 }
 
+.create-album {
+    display: block;
+    height: 150px;
+    padding-top: 25%;
+}
+
 .team-member {
     display: inline-block;
     width: 30%;
     vertical-align: top;
     margin-top: 20px;
-}
-
-.team-member img {
- 
 }
 
 .team-member:nth-of-type(1) {
