@@ -1,5 +1,5 @@
 //var samplePicture = {
-//    album: 'ref to album',
+//    album: 'albumId',
 //    pictureName: 'name',
 //    data: '4g6a46g4a4gg88588weegaga',
 //    rating: 'some Number',

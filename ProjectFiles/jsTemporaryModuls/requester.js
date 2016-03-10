@@ -40,11 +40,17 @@ var app = app || {};
         return makeRequest('PUT', requestUrl, undefined, data, success, error);
     };
 
+    var getItemsByQuery = function getItemsByQuery(collectionName, queryObj, success, error){
+        var requestUrl = _baseUrl + collectionName + '/?query=' + JSON.stringify(queryObj);
+        return makeRequest('Get', requestUrl, undefined, undefined, success, error);
+    };
+
     scope.requester = {
         getItemById: getItemById,
         getCollection: getCollection,
         deleteItemById: deleteItemById,
         editItem: editItem,
-        addItemToCollection: addItemToCollection
+        addItemToCollection: addItemToCollection,
+        getItemsByQuery: getItemsByQuery
     }
 })(app);
