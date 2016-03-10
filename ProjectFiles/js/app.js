@@ -3,6 +3,11 @@ var app = app || {};
 (function (scope) {
 
 
-    console.log(app);
+    console.log(scope);
+
+    $('#create-album').on('click', function () {
+        console.log('create album');
+    });
 
 })(app);
+
