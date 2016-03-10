@@ -114,14 +114,36 @@ body {
     background-color: #fff;
 }
 
+.main-header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 .team-logo {
     display: inline-block;
 }
 
+.team-logo img {
+    width: 45px;
+}
+
 .main-nav ul {
     display: inline-block;
+    float: right;
+    margin-top: 12px;
 }
 
 .main-nav ul li {
     display: inline-block;
+}
+
+.main-nav a {
+    padding: 10px 20px;
+    transition: all .35s;
+    color: inherit;
+}
+
+.main-nav a:hover {
+    color: tomato;
 }
