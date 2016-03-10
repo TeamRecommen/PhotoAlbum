@@ -154,8 +154,15 @@ body {
     padding-top: 20px;
 }
 
+.gallery-grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 .gallery {
     display: inline-block;
+    float: left;
     width: 22%;
     margin-left: 2%;
 }
