@@ -32,6 +32,10 @@ img {
     border: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 svg:not(:root) {
     overflow: hidden;
 }
@@ -108,6 +112,14 @@ body {
     margin: 0 auto;
     padding: 10px;
     background-color: #fff;
+}
+
+.team-logo {
+    display: inline-block;
+}
+
+.main-nav ul {
+    display: inline-block;
 }
 
 .main-nav ul li {
