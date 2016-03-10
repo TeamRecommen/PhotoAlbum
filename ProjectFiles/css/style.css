@@ -30,6 +30,7 @@ ol, ul {
 
 img {
     border: 0;
+    max-width: 100%;
 }
 
 a {
@@ -146,4 +147,15 @@ body {
 
 .main-nav a:hover {
     color: tomato;
+}
+
+.gallery-grid {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.gallery {
+    display: inline-block;
+    width: 22%;
+    margin-left: 2%;
 }
