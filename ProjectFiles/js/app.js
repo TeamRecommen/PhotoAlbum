@@ -1,6 +1,8 @@
-;
-(function ($, window, undefined) {
+var app = app || {};
 
-    console.log('it works');
+(function (scope) {
 
-})(jQuery, window);
+
+    console.log(app);
+
+})(app);
