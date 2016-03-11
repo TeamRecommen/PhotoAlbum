@@ -28,6 +28,5 @@ var app = app || {};
         })
     }
 
-
     scope.login = login;
 })(app);
