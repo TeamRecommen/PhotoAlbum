@@ -11,10 +11,10 @@ var app = app || {};
 
         $.ajax({
             type: "POST",
-            url: "https://baas.kinvey.com/user/kid_bk_D2rnp0l/login",
+            url: "https://baas.kinvey.com/user/kid_Z1d1z2oEJ-/login",
             data: currentUser,
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "Basic a2lkX2JrX0Qycm5wMGw6YTg1NTMwNGQzZjYwNDdjYjkyMTc5ZDhlNmI4MWZlMTQ=");
+                xhr.setRequestHeader("Authorization", "Basic a2lkX1oxZDF6Mm9FSi06MTc5NmQ0NzhiY2Y1NGVmOGIxMGFiZGRkZTUxYmZjNDU=");
             },
             success: function (data) {
                 sessionStorage.authToken = data._kmd.authtoken;
@@ -26,7 +26,6 @@ var app = app || {};
             }
         })
     }
-
 
     scope.login = login;
 })(app);
