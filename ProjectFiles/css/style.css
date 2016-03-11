@@ -159,15 +159,20 @@ a.active-nav {
 }
 
 .login-popup {
-    display: block;
+    display: none;
     position: absolute;
     right: -10px;
     top: 45px;
     width: 200px;
-    height: 160px;
+    height: 200px;
     padding: 10px;
     background-color: #fff;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-popup label {
+    display: block;
+    margin: 10px 0;
 }
 
 .gallery-grid {
