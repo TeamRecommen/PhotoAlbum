@@ -212,6 +212,41 @@ a.active-nav {
     border-color: #ccc;
 }
 
+.create-album_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.create-album_form {
+    max-width: 50%;
+    margin: 15% auto;
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+.create-album_form .gallery-grid_heading {
+    padding-left: 0;
+    padding-bottom: 40px;
+}
+
+.create-album_form button {
+    display: block;
+    margin-top: 10px;
+}
+
+.create-album_form .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
 .team-member {
     display: inline-block;
     width: 30%;

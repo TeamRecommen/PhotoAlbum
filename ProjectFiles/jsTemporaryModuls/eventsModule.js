@@ -5,7 +5,8 @@ var app = app || {};
     var loginNavMenu = $('#login-nav'),
         loginPopupWindow = $('#login-popup'),
         loginButton = $('#login-btn'),
-        createAlbumButton = $('#create-album');
+        createAlbumButton = $('#create-album'),
+        closeOverlayButton = $('#close-overlay');
 
 
     loginNavMenu.on('click', function () {
@@ -14,9 +15,13 @@ var app = app || {};
     });
 
     createAlbumButton.on('click', function () {
-        console.log('create album');
+        $('#create-album_overlay').show();
     });
 
     loginButton.on('click', scope.login);
+
+    closeOverlayButton.on('click', function () {
+        $('#create-album_overlay').hide();
+    });
 
 }(app));
