@@ -203,7 +203,13 @@ a.active-nav {
 .create-album {
     display: block;
     height: 150px;
-    padding-top: 25%;
+    padding-top: 28%;
+    transition: all .35s;
+    border: 1px dotted transparent;
+}
+
+.create-album:hover {
+    border-color: #ccc;
 }
 
 .team-member {
