@@ -113,6 +113,11 @@ body {
     margin: 0 auto;
     padding: 10px;
     background-color: #fff;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-header {
+    position: relative;
 }
 
 .main-header:after {
@@ -151,6 +156,18 @@ body {
 
 a.active-nav {
     color: salmon;
+}
+
+.login-popup {
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: 45px;
+    width: 200px;
+    height: 160px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-grid {

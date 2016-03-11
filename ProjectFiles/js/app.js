@@ -9,5 +9,10 @@ var app = app || {};
         console.log('create album');
     });
 
+
+    $('#login-nav').on('click', function () {
+        $('#login-popup').fadeToggle();
+    });
+
 })(app);
 
