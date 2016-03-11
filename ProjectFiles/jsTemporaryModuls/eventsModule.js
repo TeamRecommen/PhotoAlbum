@@ -10,7 +10,6 @@ var app = app || {};
 
 
     loginNavMenu.on('click', function () {
-        $(this).toggleClass('active-nav');
         loginPopupWindow.fadeToggle();
     });
 

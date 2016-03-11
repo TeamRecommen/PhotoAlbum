@@ -11,14 +11,15 @@ var app = app || {};
 
         $.ajax({
             type: "POST",
-            url: "https://baas.kinvey.com/user/kid_bk_D2rnp0l/login",
+            url: "https://baas.kinvey.com/user/kid_Z1d1z2oEJ-/login",
             data: currentUser,
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "Basic a2lkX2JrX0Qycm5wMGw6YTg1NTMwNGQzZjYwNDdjYjkyMTc5ZDhlNmI4MWZlMTQ=");
+                xhr.setRequestHeader("Authorization", "Basic " + btoa(currentUser.username + ':' + currentUser.password));
             },
             success: function (data) {
                 sessionStorage.authToken = data._kmd.authtoken;
-                //do something here
+                $('#login-popup').hide();
+                console.log('User logged');
             },
             error: function (error) {
                 console.error(error);
