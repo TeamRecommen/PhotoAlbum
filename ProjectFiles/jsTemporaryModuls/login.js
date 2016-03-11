@@ -1,13 +1,13 @@
-var app = app||{};
+var app = app || {};
 
-(function(scope){
-    function login () {
+(function (scope) {
+    function login() {
         var username = $('#username').val(),
             password = $('#password').val(),
             currentUser = {
-            "username": username,
-            "password": password
-        };
+                "username": username,
+                "password": password
+            };
 
         $.ajax({
             type: "POST",
@@ -26,6 +26,7 @@ var app = app||{};
             }
         })
     }
+
 
     scope.login = login;
 })(app);
