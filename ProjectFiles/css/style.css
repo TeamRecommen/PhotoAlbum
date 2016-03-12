@@ -262,5 +262,13 @@ a.active-nav {
     margin-left: 20%;
 }
 
+.team-member img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
 
+.team-member h3 {
+    font-weight: bold;
+}
 
