@@ -5,7 +5,10 @@ var app = app || {};
 
     // sammy routing
     app.router = Sammy(function() {
+        var requester = app.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45');
         var selector = $('.main-section');
+
+        var albumViewBag =app.albumViews.load();
 
         this.get('#/', function() {
             $.get('templates/homeTemplate.html', function(content) {
@@ -14,9 +17,7 @@ var app = app || {};
         });
 
         this.get('#/albums', function() {
-            $.get('templates/albumsTemplate.html', function(content) {
-                $(selector).html(content);
-            });
+            albumViewBag.showAlbums()
         });
 
         this.get('#/about', function() {
