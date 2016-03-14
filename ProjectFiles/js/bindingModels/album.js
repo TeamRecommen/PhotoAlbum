@@ -7,6 +7,14 @@ var app = app || {};
         this.backGroundPicture = 'No picture';
     };
 
+    AlbumInputModel.prototype.getAlbumInputModel = function() {
+        return {
+            name: this._name,
+            createdBy: this._creator,
+            backGroundPicture: this.backGroundPicture
+        }
+    };
+
     scope.albumInputModel = function(name) {
         return new AlbumInputModel(name);
     }
