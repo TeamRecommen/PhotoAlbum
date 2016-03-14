@@ -11,15 +11,17 @@ var app = app || {};
             usersModel = scope.userModel.load(requester),
 
             albumViewBag = scope.albumViews.load(),
+            userViewBag = scope.userViews.load(),
 
             albumController = scope.albumController.load(albumsModel, albumViewBag),
-            userController = scope.userController.load(usersModel);
+            userController = scope.userController.load(usersModel, userViewBag);
 
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
-                $.get('templates/loginTemplate.html', function (content) {
-                    selector.html(content);
-                });
+                userController.loadLoginPage(selector);
+                //$.get('templates/loginTemplate.html', function (content) {
+                //    selector.html(content);
+                //});
             } else {
                 $.get('templates/homeTemplate.html', function (content) {
                     selector.html(content);
