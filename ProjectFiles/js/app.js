@@ -44,7 +44,7 @@ var app = app || {};
         });
 
         this.bind('add-album', function(e, data){
-            albumViewBag.showAlbums();
+            albumController.addAlbum(data.name)
         })
     });
 

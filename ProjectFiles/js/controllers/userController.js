@@ -22,6 +22,7 @@ app.userController = (function () {
             .then(function (success) {
                 sessionStorage['sessionAuth'] = success._kmd.authtoken;
                 sessionStorage['userId'] = success._id;
+                sessionStorage['username'] = success.username;
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url:'#/questions'});
                 })

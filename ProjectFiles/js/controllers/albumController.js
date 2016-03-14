@@ -28,8 +28,11 @@ app.albumController = (function(){
             })
     };
 
-    AlbumController.prototype.addAlbum = function addAlbum(){
+    AlbumController.prototype.addAlbum = function addAlbum(data){
+        var obj = app.albumInputModel(data.name);
 
+        this._model.addAlbum(obj);
+        this._viewBag.showAlbums();
     };
 
     return {
