@@ -5,31 +5,28 @@ var app = app || {};
 
     // sammy routing
     app.router = Sammy(function() {
-        var requester = app.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45'),
-            selector = $('.main-section'),
+        var requester = app.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45');
+        var selector = $('.main-section');
 
-            albumsModel = app.albumsModel.load(),
+        var albumViewBag =app.albumViews.load();
 
-            albumViewBag =app.albumViews.load();
-
-
-        this.get('#/', function () {
-            $.get('templates/loginTemplate.html', function (content) {
+        this.get('#/', function() {
+            $.get('templates/loginTemplate.html', function(content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/albums', function () {
+        this.get('#/albums', function() {
             albumViewBag.showAlbums()
         });
 
-        this.get('#/about', function () {
-            $.get('templates/aboutTemplate.html', function (content) {
+        this.get('#/about', function() {
+            $.get('templates/aboutTemplate.html', function(content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/login', function () {
+        this.get('#/login', function() {
         });
     });
 
