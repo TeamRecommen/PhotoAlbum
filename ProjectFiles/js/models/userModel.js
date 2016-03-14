@@ -13,7 +13,7 @@ app.userModel = (function () {
 
     UserModel.prototype.login = function (data) {
         var requestUrl = this.serviceUrl + '/login';
-        return this.requester.post(requestUrl, data)
+        return this.requester.post(requestUrl, data);
     };
 
     UserModel.prototype.logout = function () {

@@ -33,7 +33,7 @@ var app = app || {};
         });
 
         this.get('#/albums', function () {
-            albumViewBag.showAlbums();
+            albumController.showAlbums();
             scope.changeActiveMenu('albums-nav');
         });
 
@@ -50,6 +50,10 @@ var app = app || {};
 
         this.bind('add-album', function(e, data){
             albumController.addAlbum(data)
+        });
+
+        this.bind('login', function (e, data) {
+            userController.login(data);
         })
     });
 

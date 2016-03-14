@@ -5,7 +5,11 @@ app.albumViews = (function() {
 
     AlbumsViews.prototype.showAlbums = function showAlbums(data) {
         $.get('templates/albumsTemplate.html', function (templ) {
-            $('.main-section').html(templ);
+            var json = {
+                albums: data
+            };
+            var rendered = Mustache.render(templ, json);
+            $('.main-section').html(rendered);
             $('#create-album').on('click', function(){
                 var createAlbumDiv = $('<div>')
                     .append($('<input>').attr('placeholder', 'Album Name').attr('id', 'album-name'))
