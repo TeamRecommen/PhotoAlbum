@@ -39,9 +39,8 @@ var app = app || {};
             scope.changeActiveMenu('about-nav');
         });
 
-        //TODO: should be post with param session token
         this.get('#/logout', function () {
-            console.log('logout')
+            scope.userModel.logout();
         })
     });
 
