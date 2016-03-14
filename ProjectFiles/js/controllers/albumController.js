@@ -24,8 +24,8 @@ app.albumController = (function(){
     };
 
     return {
-        load: function(){
-            return new AlbumController()
+        load: function(model, viewBag){
+            return new AlbumController(model, viewBag)
         }
     }
 })();
