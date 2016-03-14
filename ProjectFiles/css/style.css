@@ -159,7 +159,7 @@ a.active-nav {
 }
 
 .logout-nav {
-    visibility: hidden;
+    display: none;
 }
 
 .forms-holder {

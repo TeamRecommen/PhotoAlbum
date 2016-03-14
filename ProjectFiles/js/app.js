@@ -17,7 +17,7 @@ var app = app || {};
             } else {
                 $.get('templates/homeTemplate.html', function (content) {
                     $(selector).html(content);
-                    $('logout-nav').show();
+                    $('.logout-nav').show();
                 });
             }
             scope.changeActiveMenu('home-nav');
