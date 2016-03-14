@@ -158,6 +158,10 @@ a.active-nav {
     color: salmon;
 }
 
+.logout-nav {
+    visibility: hidden;
+}
+
 .forms-holder {
     width: 60%;
     margin: 0 auto;

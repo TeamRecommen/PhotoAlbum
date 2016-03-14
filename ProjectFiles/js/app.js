@@ -10,9 +10,16 @@ var app = app || {};
         var albumViewBag = app.albumViews.load();
 
         this.get('#/', function () {
-            $.get('templates/loginTemplate.html', function (content) {
-                $(selector).html(content);
-            });
+            if (!sessionStorage['sessionAuth']) {
+                $.get('templates/loginTemplate.html', function (content) {
+                    $(selector).html(content);
+                });
+            } else {
+                $.get('templates/homeTemplate.html', function (content) {
+                    $(selector).html(content);
+                    $('logout-nav').show();
+                });
+            }
             scope.changeActiveMenu('home-nav');
         });
 
@@ -26,9 +33,6 @@ var app = app || {};
                 $(selector).html(content);
             });
             scope.changeActiveMenu('about-nav');
-        });
-
-        this.get('#/login', function () {
         });
 
         //TODO: should be post with param session token
