@@ -1,7 +1,6 @@
 var app = app || {};
 
 (function (scope) {
-    //console.log(scope);
 
     // sammy routing
     app.router = Sammy(function () {
@@ -14,16 +13,19 @@ var app = app || {};
             $.get('templates/loginTemplate.html', function (content) {
                 $(selector).html(content);
             });
+            scope.changeActiveMenu('home-nav');
         });
 
         this.get('#/albums', function () {
-            albumViewBag.showAlbums()
+            albumViewBag.showAlbums();
+            scope.changeActiveMenu('albums-nav');
         });
 
         this.get('#/about', function () {
             $.get('templates/aboutTemplate.html', function (content) {
                 $(selector).html(content);
             });
+            scope.changeActiveMenu('about-nav');
         });
 
         this.get('#/login', function () {
