@@ -4,30 +4,35 @@ var app = app || {};
     //console.log(scope);
 
     // sammy routing
-    app.router = Sammy(function() {
+    app.router = Sammy(function () {
         var requester = app.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45');
         var selector = $('.main-section');
 
-        var albumViewBag =app.albumViews.load();
+        var albumViewBag = app.albumViews.load();
 
-        this.get('#/', function() {
-            $.get('templates/loginTemplate.html', function(content) {
+        this.get('#/', function () {
+            $.get('templates/loginTemplate.html', function (content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/albums', function() {
+        this.get('#/albums', function () {
             albumViewBag.showAlbums()
         });
 
-        this.get('#/about', function() {
-            $.get('templates/aboutTemplate.html', function(content) {
+        this.get('#/about', function () {
+            $.get('templates/aboutTemplate.html', function (content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/login', function() {
+        this.get('#/login', function () {
         });
+
+        //TODO: should be post with param session token
+        this.get('#/logout', function () {
+            console.log('logout')
+        })
     });
 
     app.router.run('#/');
