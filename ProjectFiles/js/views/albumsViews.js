@@ -7,7 +7,13 @@ app.albumViews = (function() {
         $.get('templates/albumsTemplate.html', function (templ) {
             $('.main-section').html(templ);
             $('#create-album').on('click', function(){
-                var createAlbumDiv = $('<div>').append($('<input>').attr('placeholder', 'Album Name')).append($('<button>').text('Create'));
+                var createAlbumDiv = $('<div>')
+                    .append($('<input>').attr('placeholder', 'Album Name'))
+                    .append($('<button>').text('Create').on('click', function(){
+                        $.sammy(function () {
+                            this.trigger('add-album', {})
+                        })
+                    }));
                 $(this).parent().empty().append(createAlbumDiv);
             });
         });
