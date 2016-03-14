@@ -40,10 +40,10 @@ var app = app || {};
         });
 
         this.get('#/logout', function () {
-            scope.userModel.logout();
+            console.log('logout');
         });
 
-        this.bind('add-album', function(e, data){
+        this.bind('add-album', function (e, data) {
             albumViewBag.showAlbums();
         })
     });
