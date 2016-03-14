@@ -40,7 +40,6 @@ app.requester = (function () {
                     xhr.setRequestHeader('Authorization', 'Kinvey ' + token);
                 }
                 if(data) {
-                    console.log(settings);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     settings.data = JSON.stringify(data);
                     return true;

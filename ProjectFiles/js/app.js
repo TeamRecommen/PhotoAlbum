@@ -33,7 +33,7 @@ var app = app || {};
         });
 
         this.get('#/albums', function () {
-            albumViewBag.showAlbums();
+            albumController.showAlbums();
             scope.changeActiveMenu('albums-nav');
         });
 

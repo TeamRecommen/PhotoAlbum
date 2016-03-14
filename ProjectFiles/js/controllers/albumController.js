@@ -1,43 +1,51 @@
 var app = app || {};
 
-app.albumController = (function(){
-    function AlbumController(model, viewBag){
+app.albumController = (function () {
+    function AlbumController(model, viewBag) {
         this._model = model;
         this._viewBag = viewBag;
     }
 
-    AlbumController.prototype.showAlbums = function showAlbums(){
+    AlbumController.prototype.showAlbums = function showAlbums() {
         var _this = this;
 
         _this._model.getAllAlbums()
-            .then(function(albums){
+            .then(function (albums) {
                 _this._viewBag.showAlbums(albums);
             })
     };
 
-    AlbumController.prototype.showAlbumsByRating = function showAlbumsByRating(){
+    AlbumController.prototype.showAlbumsByRating = function showAlbumsByRating() {
         var _this = this;
 
         _this._model.getAllAlbums()
-            .then(function(albums){
-                albums = albums.sort(function(a, b){
-                   return a.rating - b.rating
+            .then(function (albums) {
+                albums = albums.sort(function (a, b) {
+                    return a.rating - b.rating
                 });
 
                 _this._viewBag.showAlbums(albums);
             })
     };
 
-    AlbumController.prototype.addAlbum = function addAlbum(data){
+    AlbumController.prototype.addAlbum = function addAlbum(data) {
+        var _this = this;
+
         var obj = app.albumInputModel(data.name);
         var albumOutputModel = obj.getAlbumInputModel();
 
-        this._model.addNewAlbum(albumOutputModel);
-        //this._viewBag.showAlbums();
+        this._model.addNewAlbum(albumOutputModel).then(
+            _this._model.getAllAlbums()
+                .then(function (albums) {
+                    _this.showAlbums(albums);
+                })
+        );
+
+
     };
 
     return {
-        load: function(model, viewBag){
+        load: function (model, viewBag) {
             return new AlbumController(model, viewBag)
         }
     }
