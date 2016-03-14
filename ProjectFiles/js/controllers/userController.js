@@ -29,7 +29,6 @@ app.userController = (function () {
     };
 
     UserController.prototype.logout = function() {
-        console.log('logout');
         return this._model.logout()
             .then(function() {
                 sessionStorage.clear();

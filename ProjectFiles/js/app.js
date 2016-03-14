@@ -8,10 +8,12 @@ var app = app || {};
         var selector = $('.main-section'),
 
             albumsModel = scope.albumsModel.load(requester),
+            usersModel = scope.userModel.load(requester),
 
             albumViewBag = scope.albumViews.load(),
 
-            albumController = scope.albumController.load(albumsModel, albumViewBag);
+            albumController = scope.albumController.load(albumsModel, albumViewBag),
+            userController = scope.userController.load(usersModel);
 
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
@@ -40,7 +42,7 @@ var app = app || {};
         });
 
         this.get('#/logout', function () {
-            console.log('logout');
+            userController.logout();
         });
 
         this.bind('add-album', function (e, data) {
