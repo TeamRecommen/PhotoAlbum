@@ -4,19 +4,20 @@ var app = app || {};
     //console.log(scope);
 
     // sammy routing
-    app.router = Sammy(function() {
-        var requester = app.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45'),
+    scope.router = Sammy(function() {
+        var requester = scope.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45'),
             selector = $('.main-section'),
 
-            albumsModel = app.albumsModel.load(),
+            albumsModel = scope.albumsModel.load(requester),
 
-            albumViewBag =app.albumViews.load();
+            albumViewBag = scope.albumViews.load();
+
 
 
 
         this.get('#/', function() {
             $.get('templates/homeTemplate.html', function(content) {
-                $(selector).html(content);
+                selector.html(content);
             });
         });
 
@@ -26,7 +27,7 @@ var app = app || {};
 
         this.get('#/about', function() {
             $.get('templates/aboutTemplate.html', function(content) {
-                $(selector).html(content);
+                selector.html(content);
             });
         });
 
@@ -34,6 +35,6 @@ var app = app || {};
         });
     });
 
-    app.router.run('#/');
+    scope.router.run('#/');
 })(app);
 

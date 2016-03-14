@@ -15,8 +15,8 @@ app.albumsModel = (function(){
     };
 
     return {
-        load: function(){
-            new AlbumsModel()
+        load: function(requester){
+            new AlbumsModel(requester)
         }
     }
 })();
