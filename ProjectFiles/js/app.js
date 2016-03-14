@@ -13,24 +13,23 @@ var app = app || {};
             albumViewBag =app.albumViews.load();
 
 
-
-        this.get('#/', function() {
-            $.get('templates/homeTemplate.html', function(content) {
+        this.get('#/', function () {
+            $.get('templates/loginTemplate.html', function (content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/albums', function() {
+        this.get('#/albums', function () {
             albumViewBag.showAlbums()
         });
 
-        this.get('#/about', function() {
-            $.get('templates/aboutTemplate.html', function(content) {
+        this.get('#/about', function () {
+            $.get('templates/aboutTemplate.html', function (content) {
                 $(selector).html(content);
             });
         });
 
-        this.get('#/login', function() {
+        this.get('#/login', function () {
         });
     });
 

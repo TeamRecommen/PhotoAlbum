@@ -158,6 +158,19 @@ a.active-nav {
     color: salmon;
 }
 
+.forms-holder {
+    padding: 100px 0;
+}
+
+.login-form {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+
+/*
+
 .login-popup {
     display: none;
     position: absolute;
@@ -174,7 +187,7 @@ a.active-nav {
     display: block;
     margin: 10px 0;
 }
-
+*/
 .gallery-grid {
     text-align: center;
     padding-top: 20px;
