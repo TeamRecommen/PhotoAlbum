@@ -8,7 +8,7 @@ var app = app || {};
         var requester = scope.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45'),
             selector = $('.main-section'),
 
-            albumsModel = scope.albumsModel.load(requester),
+            albumsModel = scope.albumsModel.load(),
 
             albumViewBag = scope.albumViews.load();
 

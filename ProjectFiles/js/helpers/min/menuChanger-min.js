@@ -1,0 +1,1 @@
+var app=app||{};!function(a){a.changeActiveMenu=function(a){var n=$(".active-nav").toggleClass("active-nav");$("."+a).toggleClass("active-nav")}}(app);

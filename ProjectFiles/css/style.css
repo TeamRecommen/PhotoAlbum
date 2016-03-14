@@ -158,6 +158,44 @@ a.active-nav {
     color: salmon;
 }
 
+.logout-nav {
+    display: none;
+}
+
+.forms-holder {
+    width: 60%;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.login-form {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    margin-left: 1.5%;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h3 {
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.login-form label {
+    display: inline-block;
+    width: 80px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.login-form button {
+    width: 120px;
+    margin: 40px auto;
+    display: block;
+}
+
+/*
+
 .login-popup {
     display: none;
     position: absolute;
@@ -174,7 +212,7 @@ a.active-nav {
     display: block;
     margin: 10px 0;
 }
-
+*/
 .gallery-grid {
     text-align: center;
     padding-top: 20px;
