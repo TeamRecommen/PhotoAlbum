@@ -10,13 +10,13 @@ app.albumsModel = (function(){
         return this.requester.get(this.serviceUrl, true)
     };
 
-    AlbumsModel.prototype.addAlbum = function addAlbum (album){
+    AlbumsModel.prototype.addNewAlbum = function addAlbum (album){
         return this.requester.post(this.serviceUrl, album, true)
     };
 
     return {
         load: function(requester){
-            new AlbumsModel(requester)
+            return new AlbumsModel(requester)
         }
     }
 })();

@@ -30,9 +30,13 @@ app.albumController = (function(){
 
     AlbumController.prototype.addAlbum = function addAlbum(data){
         var obj = app.albumInputModel(data.name);
+        var albumOutputModel = {
+            name: obj.name,
+            backgroundPicture: obj.backgroundPicture,
+        };
 
-        this._model.addAlbum(obj);
-        this._viewBag.showAlbums();
+        this._model.addNewAlbum(obj);
+        //this._viewBag.showAlbums();
     };
 
     return {
