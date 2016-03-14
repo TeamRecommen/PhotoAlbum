@@ -16,7 +16,16 @@ app.albumController = (function(){
     };
 
     AlbumController.prototype.showAlbumsByRating = function showAlbumsByRating(){
+        var _this = this;
 
+        _this._model.getAllAlbums()
+            .then(function(albums){
+                albums = albums.sort(function(a, b){
+                   return a.rating - b.rating
+                });
+
+                _this._viewBag.showAlbums(albums);
+            })
     };
 
     AlbumController.prototype.addAlbum = function addAlbum(){
