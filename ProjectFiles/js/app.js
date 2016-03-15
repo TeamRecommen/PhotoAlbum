@@ -72,6 +72,11 @@ var app = app || {};
             userController.register(data);
         });
 
+
+        this.bind('add-picture', function (e, data) {
+            console.log(data);
+        });
+
     });
 
     scope.router.run('#/');

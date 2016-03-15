@@ -14,15 +14,17 @@ app.pictureViews = (function () {
             $('#add-picture').on('click', function () {
                 console.log('Hi');
                 var createPictureDiv = $('<div>')
-                    .addClass('add-picture-form')
-                    .append($('<input>').attr('type', 'file'))
-                    .append($('<button>').text('Add').on('click', function () {
-                        var name = $('#picture-name').val();
-
-                        $.sammy(function () {
-                            this.trigger('add-picture', {name: name})
-                        })
-                    }));
+                    .addClass('add-picture-form');
+                var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
+                var pictureFile = $('<input>').attr('type', 'file');
+                var btn = $('<button>').text('Add').on('click', function () {
+                    var name = $('#picture-name').val();
+                    $.sammy(function () {
+                        //filereader for base64
+                        this.trigger('add-picture', {name: pictureName.val(), content: pictureFile.val()})
+                    })
+                });
+                createPictureDiv.append(pictureName, pictureFile, btn);
                 $(this).parent().empty().append(createPictureDiv);
             });
         });

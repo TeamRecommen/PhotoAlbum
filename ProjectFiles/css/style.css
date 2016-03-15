@@ -276,6 +276,19 @@ a.active-nav {
     cursor: pointer;
 }
 
+.add-picture-form {
+    width: 100%;
+    height: 100%;
+    padding-top: 40%;
+}
+
+.add-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 40%;
+}
+
 .team-gallery {
     padding-left: 100px;
 }
