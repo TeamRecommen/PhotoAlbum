@@ -27,6 +27,13 @@ app.albumViews = (function () {
         });
     };
 
+    AlbumsViews.prototype.showTopAlbums = function showTopAlbums(data) {
+        $.get('templates/homeTemplate', function (templ) {
+            var rendered = Mustache.render(templ, data);
+            $('.main-section').html(rendered);
+        })
+    };
+
     return {
         load: function () {
             return new AlbumsViews();

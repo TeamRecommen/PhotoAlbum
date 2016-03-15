@@ -8,11 +8,11 @@ app.userController = (function () {
 
     }
 
-    UserController.prototype.loadLoginPage = function(selector) {
+    UserController.prototype.loadLoginPage = function (selector) {
         this._viewBag.showLoginPage(selector)
     };
 
-    UserController.prototype.login = function(data) {
+    UserController.prototype.login = function (data) {
         var userOutputModel = {
             username: data.username,
             password: data.password
@@ -24,15 +24,18 @@ app.userController = (function () {
                 sessionStorage['userId'] = success._id;
                 sessionStorage['username'] = success.username;
                 $.sammy(function () {
-                    this.trigger('redirectUrl', {url:'#/questions'});
+                    this.trigger('redirectUrl', {url: '#/'});
                 })
             }).done()
     };
 
-    UserController.prototype.logout = function() {
+    UserController.prototype.logout = function () {
         return this._model.logout()
-            .then(function() {
+            .then(function () {
                 sessionStorage.clear();
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: '#/'});
+                })
             })
     };
 
