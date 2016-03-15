@@ -58,6 +58,10 @@ var app = app || {};
 
         this.bind('redirectUrl', function (e, data) {
             this.redirect(data.url)
+        });
+
+        this.bind('show-album', function (e, data) {
+            console.log('load album ' + data.album);
         })
     });
 

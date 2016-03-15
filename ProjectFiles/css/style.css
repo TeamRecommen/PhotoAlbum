@@ -238,11 +238,6 @@ a.active-nav {
     height: 220px;
     padding-top: 100px;
     transition: all .35s;
-    border: 1px dotted transparent;
-}
-
-.create-album:hover {
-    border-color: #ccc;
 }
 
 .create-album_overlay {
