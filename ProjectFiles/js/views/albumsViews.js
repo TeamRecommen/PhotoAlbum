@@ -42,7 +42,14 @@ app.albumViews = (function () {
         $.get('templates/homeTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
-        });
+        }).then(function(){
+            $('.gallery-view').on('click', function () {
+                var albumId = $(this).attr('data-id');
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: '#/albums/' + albumId});
+                });
+            })}
+        );
 
     };
 

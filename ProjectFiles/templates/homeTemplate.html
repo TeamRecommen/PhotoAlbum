@@ -2,8 +2,8 @@
     <h2 class="gallery-grid_heading">Top rated albums</h2>
     <ul class="gallery-grid">
         {{#albums}}
-        <li class="gallery" data-id="gallery1">
-            <img src={{backGroundPicture}}>
+        <li class="gallery gallery-view" data-id="{{_id}}">
+            <img src={{backGroundPicture}} >
             <p class="album-name">{{name}}</p>
         </li>
         {{/albums}}
