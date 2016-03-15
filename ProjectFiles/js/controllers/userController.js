@@ -24,7 +24,7 @@ app.userController = (function () {
                 sessionStorage['userId'] = success._id;
                 sessionStorage['username'] = success.username;
                 $.sammy(function () {
-                    this.trigger('redirectUrl', {url:'#/questions'});
+                    this.trigger('redirectUrl', {url:'#/'});
                 })
             }).done()
     };

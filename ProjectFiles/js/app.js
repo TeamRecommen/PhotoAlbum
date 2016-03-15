@@ -20,9 +20,6 @@ var app = app || {};
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
                 userController.loadLoginPage(selector);
-                //$.get('templates/loginTemplate.html', function (content) {
-                //    selector.html(content);
-                //});
             } else {
                 $.get('templates/homeTemplate.html', function (content) {
                     selector.html(content);
@@ -48,12 +45,16 @@ var app = app || {};
             userController.logout();
         });
 
-        this.bind('add-album', function(e, data){
+        this.bind('add-album', function (e, data) {
             albumController.addAlbum(data)
         });
 
         this.bind('login', function (e, data) {
             userController.login(data);
+        });
+
+        this.bind('redirectUrl', function (e, data) {
+            this.redirect(data.url)
         })
     });
 
