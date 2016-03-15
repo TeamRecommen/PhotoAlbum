@@ -39,6 +39,18 @@ app.userController = (function () {
             })
     };
 
+    UserController.prototype.register = function(data) {
+        this._model.register(data)
+            .then(function(success) {
+                sessionStorage['sessionAuth'] = success._kmd.authtoken;
+                sessionStorage['userId'] = success._id;
+                sessionStorage['username'] = success.username;
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: '#/'});
+                })
+            }).done();
+    };
+
     return {
         load: function (model, viewBag) {
             return new UserController(model, viewBag)
