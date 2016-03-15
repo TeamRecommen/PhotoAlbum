@@ -6,6 +6,7 @@ var app = app || {};
         this.rating = 0;
         this.comment = '';
         this._data = data.base64data;
+        this._name = sessionStorage.username;
     };
 
     PictureInputModel.prototype.getPictureInputModel = function getPictureInputModel(){
@@ -13,7 +14,8 @@ var app = app || {};
             base64data: this._data,
             comment: this.comment,
             rating: this.rating,
-            albumId: this._albumId
+            albumId: this._albumId,
+            name: this._name
         }
     };
 
