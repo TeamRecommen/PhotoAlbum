@@ -222,6 +222,11 @@ a.active-nav {
     transition: all .35s;
 }
 
+.gallery img {
+    width: 80%;
+    height: 80%;
+}
+
 .gallery:hover {
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.4);
 }
