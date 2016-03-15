@@ -29,15 +29,9 @@ app.albumController = (function () {
     };
 
     AlbumController.prototype.addAlbum = function addAlbum(data) {
-        var _this = this;
-
-        var obj = app.albumInputModel(data.name);
-        var albumOutputModel = obj.getAlbumInputModel();
-<<<<<<< HEAD
-
-        this._model.addNewAlbum(albumOutputModel);
-        //this._viewBag.showAlbums();
-=======
+        var _this = this,
+            obj = app.albumInputModel(data.name),
+            albumOutputModel = obj.getAlbumInputModel();
 
         this._model.addNewAlbum(albumOutputModel).then(
             _this._model.getAllAlbums()
@@ -45,9 +39,6 @@ app.albumController = (function () {
                     _this.showAlbums(albums);
                 })
         );
-
-
->>>>>>> 3517f60a9cbb4885a80f7ba6b6dc5876a996d523
     };
 
     return {
