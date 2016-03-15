@@ -8,7 +8,7 @@ app.picturesModel = (function () {
 
     PicturesModel.prototype.getAllPictures = function (albumId) {
         var requestId = this.serviceUrl + '/?query={"albumId":"' + albumId + '"}';
-        return this.requester.get(this.serviceUrl, true)
+        return this.requester.get(requestId, true)
     };
 
     PicturesModel.prototype.addNewPicture = function (picture) {

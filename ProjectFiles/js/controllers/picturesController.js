@@ -30,7 +30,7 @@ app.pictureController = (function () {
 
     PictureController.prototype.addPicture = function (data) {
         var _this = this,
-            obj = app.pictureInputModel(data.name),
+            obj = app.pictureInputModel(data.name, data.albumId, '', data.base64data),
             pictureOutputModel = obj.getPictureInputModel();
 
         this._model.addNewPicture(pictureOutputModel).then(

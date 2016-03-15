@@ -1,7 +1,7 @@
 var app = app || {};
 
 (function (scope) {
-    var PictureInputModel = function(name, albumId, comment, data) {
+    var PictureInputModel = function (name, albumId, comment, data) {
         this._name = name;
         this._albumId = albumId;
         this.rating = 0;
@@ -9,7 +9,7 @@ var app = app || {};
         this._data = data;
     };
 
-    PictureInputModel.prototype.getPictureInputModel = function getPictureInputModel(){
+    PictureInputModel.prototype.getPictureInputModel = function getPictureInputModel() {
         return {
             name: this._name,
             base64data: this._data,
@@ -19,7 +19,7 @@ var app = app || {};
         }
     };
 
-    scope.pictureInputModel = function(name) {
-        return new PictureInputModel(name);
+    scope.pictureInputModel = function (name, albumId, comment, data) {
+        return new PictureInputModel(name, albumId, comment, data);
     }
 })(app);
