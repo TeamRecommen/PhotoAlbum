@@ -65,7 +65,6 @@ var app = app || {};
 
         this.bind('show-album', function (e, data) {
             picturesController.showPictures(data.album);
-
         });
 
         this.bind('register', function (e, data) {
