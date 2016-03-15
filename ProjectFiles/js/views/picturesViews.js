@@ -12,7 +12,6 @@ app.pictureViews = (function () {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
             $('#add-picture').on('click', function () {
-                console.log('Hi');
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form');
                 var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
@@ -22,7 +21,6 @@ app.pictureViews = (function () {
                 var btn = $('<button>').text('Add').on('click', function () {
                     var name = $('#picture-name').val();
                     $.sammy(function () {
-                        //filereader for base64
                         this.trigger('add-picture', {name: pictureName.val(), content: pictureFile.val()})
                     })
                 });

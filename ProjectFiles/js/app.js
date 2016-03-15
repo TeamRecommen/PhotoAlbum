@@ -74,7 +74,7 @@ var app = app || {};
 
 
         this.bind('add-picture', function (e, data) {
-            console.log(data);
+            picturesController.addPicture(data);
         });
 
     });

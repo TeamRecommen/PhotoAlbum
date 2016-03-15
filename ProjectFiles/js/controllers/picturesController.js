@@ -41,6 +41,7 @@ app.pictureController = (function () {
         );
     };
 
+
     return {
         load: function (model, viewBag) {
             return new PictureController(model, viewBag)
