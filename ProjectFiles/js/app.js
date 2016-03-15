@@ -43,6 +43,7 @@ var app = app || {};
 
         this.get('#/logout', function () {
             userController.logout();
+            $('.logout-nav').hide();
         });
 
         this.bind('add-album', function (e, data) {
