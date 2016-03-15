@@ -6,7 +6,8 @@ app.picturesModel = (function () {
         this.serviceUrl = this.requester.baseUrl + 'appdata/' + this.requester.appId + '/Pictures';
     }
 
-    PicturesModel.prototype.getAllPictures = function () {
+    PicturesModel.prototype.getAllPictures = function (albumId) {
+        var requestId = this.serviceUrl + '/?query={"albumId":"' + albumId + '"}';
         return this.requester.get(this.serviceUrl, true)
     };
 

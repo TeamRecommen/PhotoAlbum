@@ -9,13 +9,16 @@ var app = app || {};
 
             albumsModel = scope.albumsModel.load(requester),
             usersModel = scope.userModel.load(requester),
+            picturesModel = scope.picturesModel.load(requester),
 
             albumViewBag = scope.albumViews.load(),
             userViewBag = scope.userViews.load(),
+            pictureViewBag = scope.pictureViews.load(),
 
 
             albumController = scope.albumController.load(albumsModel, albumViewBag),
-            userController = scope.userController.load(usersModel, userViewBag);
+            userController = scope.userController.load(usersModel, userViewBag),
+            pictureController = scope.pictureController.load(picturesModel, pictureViewBag);
 
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
@@ -61,6 +64,7 @@ var app = app || {};
         });
 
         this.bind('show-album', function (e, data) {
+            pictureController.showPictures(data.album);
             console.log('load album ' + data.album);
         })
     });

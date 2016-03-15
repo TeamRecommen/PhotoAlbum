@@ -12,9 +12,10 @@ app.pictureViews = (function () {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
             $('#add-picture').on('click', function () {
+                console.log('Hi');
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form')
-                    .append($('<input>').attr('placeholder', 'Picture Name').attr('id', 'picture-name'))
+                    .append($('<input>').attr('type', 'file'))
                     .append($('<button>').text('Add').on('click', function () {
                         var name = $('#picture-name').val();
 
