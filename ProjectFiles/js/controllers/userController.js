@@ -26,7 +26,7 @@ app.userController = (function () {
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url: '#/'});
                 })
-            }).done()
+            }).done();
     };
 
     UserController.prototype.logout = function () {
@@ -35,13 +35,13 @@ app.userController = (function () {
                 sessionStorage.clear();
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url: '#/'});
-                })
-            })
+                });
+            });
     };
 
-    UserController.prototype.register = function(data) {
+    UserController.prototype.register = function (data) {
         this._model.register(data)
-            .then(function(success) {
+            .then(function (success) {
                 sessionStorage['sessionAuth'] = success._kmd.authtoken;
                 sessionStorage['userId'] = success._id;
                 sessionStorage['username'] = success.username;
