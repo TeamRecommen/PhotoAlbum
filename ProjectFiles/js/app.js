@@ -66,7 +66,11 @@ var app = app || {};
         this.bind('show-album', function (e, data) {
             pictureController.showPictures(data.album);
             console.log('load album ' + data.album);
-        })
+        });
+
+        this.bind('register', function(e, data) {
+            userController.register(data);
+        });
     });
 
     scope.router.run('#/');
