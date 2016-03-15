@@ -23,10 +23,10 @@ var app = app || {};
             } else {
                 $.get('templates/homeTemplate.html', function (content) {
                     selector.html(content);
-                    $('.logout-nav').show();
                 });
             }
             scope.changeActiveMenu('home-nav');
+            scope.showHideLogout();
         });
 
         this.get('#/albums', function () {
@@ -39,11 +39,13 @@ var app = app || {};
                 selector.html(content);
             });
             scope.changeActiveMenu('about-nav');
+            scope.showHideLogout();
+
         });
 
         this.get('#/logout', function () {
             userController.logout();
-            $('.logout-nav').hide();
+            scope.showHideLogout();
         });
 
         this.bind('add-album', function (e, data) {
