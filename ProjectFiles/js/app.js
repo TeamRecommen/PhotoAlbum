@@ -64,7 +64,7 @@ var app = app || {};
         });
 
         this.bind('show-album', function (e, data) {
-            picturesController.getAllPictures(data.album);
+            picturesController.showPictures(data.album);
 
         });
 
