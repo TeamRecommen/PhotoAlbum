@@ -46,6 +46,10 @@ var app = app || {};
 
         });
 
+        this.get('#/albums/:albumId', function () {
+            picturesController.showPictures(this.params['albumId']);
+        });
+
         this.get('#/logout', function () {
             userController.logout();
             scope.showHideLogout();
@@ -75,6 +79,7 @@ var app = app || {};
         this.bind('add-picture', function (e, data) {
             picturesController.addPicture(data);
         });
+
 
     });
 

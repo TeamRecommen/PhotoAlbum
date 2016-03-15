@@ -24,10 +24,11 @@ app.albumViews = (function () {
                     }));
                 $(this).parent().empty().append(createAlbumDiv);
             });
+
             $('.gallery-view').on('click', function () {
                 var albumId = $(this).attr('data-id');
                 $.sammy(function () {
-                    this.trigger('show-album', {album: albumId});
+                    this.trigger('redirectUrl', {url: '#/albums/' + albumId});
                 });
             });
         });
