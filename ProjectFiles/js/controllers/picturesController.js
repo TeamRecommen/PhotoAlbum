@@ -8,10 +8,9 @@ app.pictureController = (function () {
 
     PictureController.prototype.showPictures = function (albumId) {
         var _this = this;
-
         _this._model.getAllPictures(albumId)
             .then(function (pictures) {
-                _this._viewBag.showPictures(pictures);
+                _this._viewBag.showPictures(pictures, albumId);
             })
     };
 
@@ -30,11 +29,12 @@ app.pictureController = (function () {
 
     PictureController.prototype.addPicture = function (data) {
         var _this = this,
-            obj = app.pictureInputModel(data.name),
+            albumId = data.albumId,
+            obj = app.pictureInputModel(data),
             pictureOutputModel = obj.getPictureInputModel();
 
         this._model.addNewPicture(pictureOutputModel).then(
-            _this._model.getAllPictures()
+            _this._model.getAllPictures(albumId)
                 .then(function (pictures) {
                     _this.showPictures(pictures);
                 })

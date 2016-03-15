@@ -4,7 +4,7 @@ app.pictureViews = (function () {
     function PictureViews() {
     }
 
-    PictureViews.prototype.showPictures = function (data) {
+    PictureViews.prototype.showPictures = function (data, albumId) {
         $.get('templates/picturesTemplate.html', function (templ) {
             var json = {
                 pictures: data
@@ -14,7 +14,7 @@ app.pictureViews = (function () {
             $('#add-picture').on('click', function () {
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form');
-                var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
+                var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture comment:');
                 var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
                 var uploadLabel = $('<label>').attr('for', 'picture-upload').addClass('picture-upload').text('Choose File');
                 var pictureFile = $('<input>').attr({type: 'file', id: 'picture-upload'}).addClass('picture-input').change(function(){
@@ -23,7 +23,7 @@ app.pictureViews = (function () {
 
                     reader.addEventListener("load", function () {
                         $.sammy(function () {
-                            this.trigger('add-picture', {base64data: reader.result})
+                            this.trigger('add-picture', {base64data: reader.result, albumId: albumId})
                         })
                     }, false);
 

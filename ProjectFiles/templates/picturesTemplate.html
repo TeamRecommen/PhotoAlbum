@@ -1,13 +1,13 @@
 <section class="gallery-grid_holder">
     <h2 class="gallery-grid_heading">Album Pictures</h2>
     <ul class="gallery-grid">
-        <li class="gallery" data-id="gallery1">
+        <li class="gallery" data-id="gallery1" id="">
             <span class="add-picture" id="add-picture">Add Picture</span>
         </li>
         {{#pictures}}
         <li class="gallery" data-id="gallery1">
-            <img src={{backGroundPicture}}>
-            <p class="picture-name">{{name}}</p>
+            <img src={{base64data}}>
+            <p class="picture-name">Uploaded by: {{name}}</p>
         </li>
         {{/pictures}}
     </ul>
