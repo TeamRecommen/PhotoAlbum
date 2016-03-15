@@ -173,6 +173,7 @@ a.active-nav {
     width: 48%;
     text-align: center;
     margin-left: 1.5%;
+    padding: 10px;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
 }
 
