@@ -15,8 +15,10 @@ app.pictureViews = (function () {
                 console.log('Hi');
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form');
+                var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
                 var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
-                var pictureFile = $('<input>').attr('type', 'file');
+                var uploadLabel = $('<label>').attr('for', 'picture-upload').addClass('picture-upload').text('Choose File');
+                var pictureFile = $('<input>').attr({type: 'file', id: 'picture-upload'}).addClass('picture-input');
                 var btn = $('<button>').text('Add').on('click', function () {
                     var name = $('#picture-name').val();
                     $.sammy(function () {
@@ -24,7 +26,7 @@ app.pictureViews = (function () {
                         this.trigger('add-picture', {name: pictureName.val(), content: pictureFile.val()})
                     })
                 });
-                createPictureDiv.append(pictureName, pictureFile, btn);
+                createPictureDiv.append(nameLabel, pictureName, uploadLabel, pictureFile, btn);
                 $(this).parent().empty().append(createPictureDiv);
             });
         });
