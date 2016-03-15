@@ -12,21 +12,27 @@ app.pictureViews = (function () {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
             $('#add-picture').on('click', function () {
-                console.log('Hi');
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form');
                 var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
                 var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
                 var uploadLabel = $('<label>').attr('for', 'picture-upload').addClass('picture-upload').text('Choose File');
-                var pictureFile = $('<input>').attr({type: 'file', id: 'picture-upload'}).addClass('picture-input');
-                var btn = $('<button>').text('Add').on('click', function () {
-                    var name = $('#picture-name').val();
-                    $.sammy(function () {
-                        //filereader for base64
-                        this.trigger('add-picture', {name: pictureName.val(), content: pictureFile.val()})
-                    })
+                var pictureFile = $('<input>').attr({type: 'file', id: 'picture-upload'}).addClass('picture-input').change(function(){
+                    var reader = new FileReader(),
+                        file = this.files[0];
+
+                    reader.addEventListener("load", function () {
+                        $.sammy(function () {
+                            this.trigger('add-picture', {base64data: reader.result})
+                        })
+                    }, false);
+
+                    if (file){
+                        reader.readAsDataURL(file);
+                    }
                 });
-                createPictureDiv.append(nameLabel, pictureName, uploadLabel, pictureFile, btn);
+                
+                createPictureDiv.append(nameLabel, pictureName, uploadLabel, pictureFile);
                 $(this).parent().empty().append(createPictureDiv);
             });
         });
