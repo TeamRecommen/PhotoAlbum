@@ -24,6 +24,12 @@ app.albumViews = (function () {
                     }));
                 $(this).parent().empty().append(createAlbumDiv);
             });
+            $('.gallery-view').on('click', function () {
+                var albumId = $(this).attr('data-id');
+                $.sammy(function () {
+                    this.trigger('show-album', {album: albumId});
+                });
+            });
         });
     };
 
@@ -31,7 +37,8 @@ app.albumViews = (function () {
         $.get('templates/homeTemplate', function (templ) {
             var rendered = Mustache.render(templ, data);
             $('.main-section').html(rendered);
-        })
+        });
+
     };
 
     return {
