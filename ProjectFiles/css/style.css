@@ -280,6 +280,10 @@ a.active-nav {
     cursor: pointer;
 }
 
+.team-gallery {
+    padding-left: 100px;
+}
+
 .team-member {
     display: inline-block;
     width: 30%;
@@ -303,5 +307,6 @@ a.active-nav {
 
 .team-member h3 {
     font-weight: bold;
+    padding-left: 10px;
 }
 
