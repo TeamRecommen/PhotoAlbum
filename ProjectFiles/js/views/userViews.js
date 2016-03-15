@@ -12,6 +12,16 @@ app.userViews = (function () {
                 $.sammy(function () {
                     this.trigger('login', {username: username, password: password});
                 });
+            });
+
+            $('#register-button').on('click', function() {
+
+                var regUsername = $('#register-username').val(),
+                    regPassword = $('#register-password').val();
+
+                $.sammy(function() {
+                    this.trigger('register', {username: regUsername, password: regPassword})
+                })
             })
         })
     }
