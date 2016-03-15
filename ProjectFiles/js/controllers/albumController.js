@@ -21,10 +21,10 @@ app.albumController = (function () {
         _this._model.getAllAlbums()
             .then(function (albums) {
                 albums = albums.sort(function (a, b) {
-                    return a.rating - b.rating
+                    return b.rating - a.rating
                 });
 
-                _this._viewBag.showAlbums(albums);
+                _this._viewBag.showTopAlbums(albums);
             })
     };
 

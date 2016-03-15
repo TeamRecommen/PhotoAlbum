@@ -35,8 +35,12 @@ app.albumViews = (function () {
     };
 
     AlbumsViews.prototype.showTopAlbums = function showTopAlbums(data) {
-        $.get('templates/homeTemplate', function (templ) {
-            var rendered = Mustache.render(templ, data);
+        var json = {
+            albums:data
+        };
+
+        $.get('templates/homeTemplate.html', function (templ) {
+            var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
         });
 

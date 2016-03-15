@@ -1,33 +1,39 @@
 <section class="gallery-grid_holder">
     <h2 class="gallery-grid_heading">Top rated albums</h2>
     <ul class="gallery-grid">
+        {{#albums}}
         <li class="gallery" data-id="gallery1">
-            <img src="img/sample1.jpg">
-            <p class="album-name">Album Name</p>
+            <img src={{backGroundPicture}}>
+            <p class="album-name">{{name}}</p>
         </li>
-        <li class="gallery" data-id="gallery2">
-            <img src="img/sample2.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
-        <li class="gallery" data-id="gallery3">
-            <img src="img/sample3.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
-        <li class="gallery" data-id="gallery4">
-            <img src="img/sample4.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
-        <li class="gallery" data-id="gallery5">
-            <img src="img/sample5.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
-        <li class="gallery" data-id="gallery6">
-            <img src="img/sample6.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
-        <li class="gallery" data-id="gallery7">
-            <img src="img/sample7.jpg">
-            <p class="album-name">Album Name</p>
-        </li>
+        {{/albums}}
+        <!--<li class="gallery" data-id="gallery1">-->
+            <!--<img src="img/sample1.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery2">-->
+            <!--<img src="img/sample2.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery3">-->
+            <!--<img src="img/sample3.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery4">-->
+            <!--<img src="img/sample4.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery5">-->
+            <!--<img src="img/sample5.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery6">-->
+            <!--<img src="img/sample6.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
+        <!--<li class="gallery" data-id="gallery7">-->
+            <!--<img src="img/sample7.jpg">-->
+            <!--<p class="album-name">Album Name</p>-->
+        <!--</li>-->
     </ul>
 </section>
