@@ -32,6 +32,7 @@ app.pictureController = (function () {
             albumId = data.albumId,
             obj = app.pictureInputModel(data),
             pictureOutputModel = obj.getPictureInputModel();
+        console.log(albumId);
 
         this._model.addNewPicture(pictureOutputModel).then(
             _this._model.getAllPictures(albumId)
