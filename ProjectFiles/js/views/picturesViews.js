@@ -21,6 +21,7 @@ app.pictureViews = (function () {
                 var btn = $('<button>').text('Add').on('click', function () {
                     var name = $('#picture-name').val();
                     $.sammy(function () {
+                        //TODO: base64 encode the file and then send
                         this.trigger('add-picture', {name: pictureName.val(), content: pictureFile.val()})
                     })
                 });
