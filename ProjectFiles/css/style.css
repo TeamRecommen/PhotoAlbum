@@ -194,25 +194,6 @@ a.active-nav {
     display: block;
 }
 
-/*
-
-.login-popup {
-    display: none;
-    position: absolute;
-    right: -10px;
-    top: 45px;
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.login-popup label {
-    display: block;
-    margin: 10px 0;
-}
-*/
 .gallery-grid {
     text-align: center;
     padding-top: 20px;
@@ -232,16 +213,24 @@ a.active-nav {
 .gallery {
     display: inline-block;
     float: left;
-    width: 22.5%;
+    width: 220px;
+    height: 220px;
     margin-left: 2%;
     margin-top: 1%;
     cursor: pointer;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all .35s;
 }
 
-.create-album {
+.gallery:hover {
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.create-album, .create-album-form {
     display: block;
-    height: 150px;
-    padding-top: 28%;
+    width: 220px;
+    height: 220px;
+    padding-top: 100px;
     transition: all .35s;
     border: 1px dotted transparent;
 }
