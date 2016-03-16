@@ -5,7 +5,6 @@ app.pictureViews = (function () {
     }
 
     PictureViews.prototype.showPictures = function (data, albumId) {
-        console.log(data + '\n' + albumId);
         var _this = this;
         $.get('templates/picturesTemplate.html', function (templ) {
             var json = {
@@ -69,8 +68,6 @@ app.pictureViews = (function () {
                 outputObj = currentPic[pic];
             }
         }
-
-        console.log(outputObj);
 
         $.get('templates/singlePictureTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, outputObj);

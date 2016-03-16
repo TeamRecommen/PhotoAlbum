@@ -28,6 +28,16 @@ app.albumController = (function () {
             })
     };
 
+    AlbumController.prototype.updateAlbumRating = function updateAlbumRating(albumId){
+        var _this = this;
+        this._model.getAlbumById(albumId)
+            .then(function(success){
+                console.log(success);
+                success.rating++;
+                _this._model.updateAlbum(albumId, success);
+        }).done()
+    };
+
     AlbumController.prototype.updateBackgroundPicture = function updateBackgroundPicture (data){
         var _this = this;
         _this._model.getAlbumById(data.albumId).then(function(album){

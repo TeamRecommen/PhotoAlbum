@@ -24,9 +24,6 @@ var app = app || {};
             if (!sessionStorage['sessionAuth']) {
                 userController.loadLoginPage(selector);
             } else {
-                //$.get('templates/homeTemplate.html', function (content) {
-                //    selector.html(content);
-                //});
                 albumController.showAlbumsByRating()
             }
             scope.changeActiveMenu('home-nav');
@@ -88,8 +85,12 @@ var app = app || {};
         });
 
         this.bind('update-pic-rating', function (e, data) {
-            data.rating++;
             picturesController.updatePicture(data);
+        });
+
+        this.bind('update-album-rating', function(e, data){
+            console.log(data.albumId);
+            albumController.updateAlbumRating(data.albumId)
         });
     });
 

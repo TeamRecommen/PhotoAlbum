@@ -34,7 +34,7 @@ app.pictureController = (function () {
             pictureOutputModel = obj.getPictureInputModel();
 
         this._model.addNewPicture(pictureOutputModel)
-            .then(function() {
+            .then(function () {
                 _this.showPictures(albumId);
             })
     };
@@ -42,12 +42,13 @@ app.pictureController = (function () {
     PictureController.prototype.updatePicture = function (data) {
         var _this = this,
             albumId = data.albumId;
-            //obj = app.pictureInputModel(data),
-            //pictureOutputModel = obj.getPictureInputModel();
 
         this._model.updatePicture(data)
-            .then(function() {
+            .then(function () {
                 _this.showPictures(albumId);
+                $.sammy(function () {
+                    this.trigger('update-album-rating', {albumId: albumId});
+                })
             })
     };
 
