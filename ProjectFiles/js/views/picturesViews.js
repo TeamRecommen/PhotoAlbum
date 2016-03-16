@@ -39,7 +39,7 @@ app.pictureViews = (function () {
                 $(this).parent().empty().append(createPictureDiv);
             });
         }).then(function () {
-            app.galleryPopup();
+            app.galleryPopup(data);
         });
 
     };

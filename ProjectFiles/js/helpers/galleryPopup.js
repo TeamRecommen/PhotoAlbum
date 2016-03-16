@@ -1,9 +1,9 @@
 var app = app || {};
 
 
-app.galleryPopup = (function () {
-
-    $('.single-picture').on('click', function () {
+app.galleryPopup = (function (data) {
+    var pictures = $('.single-picture');
+    pictures.on('click', function () {
         var overlay = $('<div>').addClass('gallery-overlay'),
             closeOverlay = $('<span>')
                 .addClass('close-overlay')
@@ -16,7 +16,6 @@ app.galleryPopup = (function () {
         var imagePreview = $('<img>').attr('src', imageSrc).addClass('image-preview');
 
         var commentSection = $('<div>').addClass('comment-section').text('Comment section here');
-
 
         closeOverlay.append(closeImage);
         imageHolder.append(imagePreview, closeOverlay, commentSection);
