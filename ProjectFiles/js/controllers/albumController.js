@@ -31,12 +31,10 @@ app.albumController = (function () {
     AlbumController.prototype.updateBackgroundPicture = function updateBackgroundPicture (data){
         var _this = this;
         _this._model.getAlbumById(data.albumId).then(function(album){
-            if (album.isEmpty){
                 album.isEmpty = false;
                 album.backGroundPicture = data.base64data;
                 console.log(_this);
                 _this._model.updateAlbum(data.albumId, album)
-            }
         }).done();
     };
 
