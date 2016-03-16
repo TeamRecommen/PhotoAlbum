@@ -24,6 +24,9 @@ var app = app || {};
             if (!sessionStorage['sessionAuth']) {
                 userController.loadLoginPage(selector);
             } else {
+                //$.get('templates/homeTemplate.html', function (content) {
+                //    selector.html(content);
+                //});
                 albumController.showAlbumsByRating()
             }
             scope.changeActiveMenu('home-nav');

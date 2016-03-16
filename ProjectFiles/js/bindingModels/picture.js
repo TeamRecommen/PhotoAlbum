@@ -15,7 +15,7 @@ var app = app || {};
         return {
             base64data: this._data,
             comment: this._comment,
-            rating: this.rating || 0,
+            rating: this.rating,
             albumId: this._albumId,
             name: this._name,
             id: this._id
