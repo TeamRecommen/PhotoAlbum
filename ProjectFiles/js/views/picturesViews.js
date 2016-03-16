@@ -26,8 +26,9 @@ app.pictureViews = (function () {
                         file = this.files[0];
 
                     reader.addEventListener("load", function () {
+                        var comment = $('#picture-name').val();
                         $.sammy(function () {
-                            this.trigger('add-picture', {base64data: reader.result, albumId: albumId})
+                            this.trigger('add-picture', {base64data: reader.result, albumId: albumId, comment: comment})
                         })
                     }, false);
 

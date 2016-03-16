@@ -4,7 +4,7 @@ var app = app || {};
     var PictureInputModel = function(data) {
         this._albumId = data.albumId;
         this.rating = 0;
-        this.comment = '';
+        this._comment = data.comment;
         this._data = data.base64data;
         this._name = sessionStorage.username;
     };
@@ -12,7 +12,7 @@ var app = app || {};
     PictureInputModel.prototype.getPictureInputModel = function getPictureInputModel(){
         return {
             base64data: this._data,
-            comment: this.comment,
+            comment: this._comment,
             rating: this.rating,
             albumId: this._albumId,
             name: this._name
