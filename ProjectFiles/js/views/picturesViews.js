@@ -5,6 +5,7 @@ app.pictureViews = (function () {
     }
 
     PictureViews.prototype.showPictures = function (data, albumId) {
+        var _this = this;
         $.get('templates/picturesTemplate.html', function (templ) {
             var json = {
                 pictures: data
@@ -39,7 +40,9 @@ app.pictureViews = (function () {
                 $(this).parent().empty().append(createPictureDiv);
             });
         }).then(function () {
-            app.galleryPopup(data);
+            $('.single-picture').on('click', function () {
+                _this.singlePicturePopup(data);
+            });
         });
 
     };
@@ -48,6 +51,16 @@ app.pictureViews = (function () {
         $.get('templates/homeTemplate', function (templ) {
             var rendered = Mustache.render(templ, data);
             $('.main-section').html(rendered);
+        })
+    };
+
+    PictureViews.prototype.singlePicturePopup = function (data) {
+        $.get('templates/singlePictureTemplate.html', function (templ) {
+            var rendered = Mustache.render(templ, data);
+            $('.main-section').append(rendered);
+            $('#close-overlay').on('click', function () {
+                $('#gallery-overlay').remove();
+            })
         })
     };
 

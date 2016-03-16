@@ -10,7 +10,6 @@ app.pictureController = (function () {
         var _this = this;
         _this._model.getAllPictures(albumId)
             .then(function (pictures) {
-                console.log(pictures);
                 _this._viewBag.showPictures(pictures, albumId);
             })
     };
