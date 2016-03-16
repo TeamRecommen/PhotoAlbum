@@ -78,7 +78,6 @@ app.pictureViews = (function () {
                 $('#gallery-overlay').remove();
             });
             $('.picture-like-button').on('click', function() {
-                outputObj.rating++;
                 $.sammy(function() {
                     this.trigger('update-pic-rating', outputObj);
                 })
