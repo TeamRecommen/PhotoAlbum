@@ -16,7 +16,7 @@ app.picturesModel = (function () {
     };
 
     PicturesModel.prototype.updatePicture = function (picture) {
-        return this.requester.put(this.serviceUrl, picture, true);
+        return this.requester.put(this.serviceUrl + '/' + picture.id, picture, true);
     };
 
     return {
