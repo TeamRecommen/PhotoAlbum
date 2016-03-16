@@ -84,6 +84,7 @@ var app = app || {};
         });
 
         this.bind('update-pic-rating', function (e, data) {
+            data.rating++;
             picturesController.updatePicture(data);
         });
     });
