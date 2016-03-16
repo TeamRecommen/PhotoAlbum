@@ -10,6 +10,7 @@ app.pictureController = (function () {
         var _this = this;
         _this._model.getAllPictures(albumId)
             .then(function (pictures) {
+                console.log(pictures);
                 _this._viewBag.showPictures(pictures, albumId);
             })
     };
@@ -32,14 +33,13 @@ app.pictureController = (function () {
             albumId = data.albumId,
             obj = app.pictureInputModel(data),
             pictureOutputModel = obj.getPictureInputModel();
-        console.log(albumId);
 
-        this._model.addNewPicture(pictureOutputModel).then(
-            _this._model.getAllPictures(albumId)
-                .then(function (pictures) {
-                    _this.showPictures(pictures);
-                })
-        );
+        this._model.addNewPicture(pictureOutputModel);
+        _this.showPictures(albumId);
+        //_this._model.getAllPictures(albumId)
+        //    .then(function (pictures) {
+        //        _this._viewBag.showPictures(pictures, albumId);
+        //    })
     };
 
 
