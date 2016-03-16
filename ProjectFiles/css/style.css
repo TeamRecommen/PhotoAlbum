@@ -487,3 +487,35 @@ a.active-nav {
     left: 80px;
     text-align: center;
 }
+
+@media screen and (max-width: 720px) {
+    .gallery {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .main-nav ul {
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .gallery-grid {
+        display: block;
+        width: 100%;
+    }
+
+    .gallery {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+}
