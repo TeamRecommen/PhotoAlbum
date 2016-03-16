@@ -6,7 +6,7 @@ var app = app || {};
         this.rating = data.rating;
         this.comment = '';
         this._data = data.base64data;
-        this._name = sessionStorage.username,
+        this._name = sessionStorage.username;
         this._id = data._id
     };
 
@@ -14,7 +14,7 @@ var app = app || {};
         return {
             base64data: this._data,
             comment: this.comment,
-            rating: this.rating,
+            rating: this.rating || 0,
             albumId: this._albumId,
             name: this._name,
             id: this._id
