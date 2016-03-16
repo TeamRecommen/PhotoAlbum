@@ -41,11 +41,11 @@ app.pictureController = (function () {
 
     PictureController.prototype.updatePicture = function (data) {
         var _this = this,
-            albumId = data.albumId,
-            obj = app.pictureInputModel(data),
-            pictureOutputModel = obj.getPictureInputModel();
+            albumId = data.albumId;
+            //obj = app.pictureInputModel(data),
+            //pictureOutputModel = obj.getPictureInputModel();
 
-        this._model.updatePicture(pictureOutputModel)
+        this._model.updatePicture(data)
             .then(function() {
                 _this.showPictures(albumId);
             })
