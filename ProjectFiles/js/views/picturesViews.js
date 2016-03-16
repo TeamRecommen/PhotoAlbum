@@ -61,11 +61,17 @@ app.pictureViews = (function () {
 
     PictureViews.prototype.singlePicturePopup = function (data) {
         var currentPic = data.allPics;
+        var outputObj;
         for (var pic in currentPic) {
-            console.log(currentPic[pic]);
+            if (currentPic[pic]._id == data.currentPicId) {
+                outputObj = currentPic[pic];
+            }
         }
+
+        console.log(outputObj);
+
         $.get('templates/singlePictureTemplate.html', function (templ) {
-            var rendered = Mustache.render(templ, data);
+            var rendered = Mustache.render(templ, outputObj);
             $('.main-section').append(rendered);
             $('#close-overlay').on('click', function () {
                 $('#gallery-overlay').remove();
