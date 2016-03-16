@@ -20,6 +20,10 @@ var app = app || {};
             userController = scope.userController.load(usersModel, userViewBag),
             picturesController = scope.pictureController.load(picturesModel, picturesViewBag);
 
+        this.before(function(){
+            scope.showHideLogout();
+        });
+
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
                 userController.loadLoginPage(selector);
@@ -27,7 +31,7 @@ var app = app || {};
                 albumController.showAlbumsByRating()
             }
             scope.changeActiveMenu('home-nav');
-            scope.showHideLogout();
+
         });
 
         this.get('#/albums', function () {
@@ -40,18 +44,15 @@ var app = app || {};
                 selector.html(content);
             });
             scope.changeActiveMenu('about-nav');
-            scope.showHideLogout();
 
         });
 
         this.get('#/albums/:albumId', function () {
             picturesController.showPictures(this.params['albumId']);
-            scope.showHideLogout();
         });
 
         this.get('#/logout', function () {
             userController.logout();
-            scope.showHideLogout();
         });
 
         this.bind('add-album', function (e, data) {
