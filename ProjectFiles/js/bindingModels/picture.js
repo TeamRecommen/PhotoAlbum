@@ -3,9 +3,8 @@ var app = app || {};
 (function (scope) {
     var PictureInputModel = function(data) {
         this._albumId = data.albumId;
-        this.rating = 0;
         this._comment = data.comment;
-        this.rating = data.rating;
+        this.rating = data.rating || 0;
         this._data = data.base64data;
         this._name = sessionStorage.username;
         this._id = data._id
