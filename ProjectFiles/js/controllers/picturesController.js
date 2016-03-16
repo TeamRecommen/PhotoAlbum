@@ -43,6 +43,8 @@ app.pictureController = (function () {
         var _this = this,
             albumId = data.albumId;
 
+        data.rating++;
+
         this._model.updatePicture(data)
             .then(function () {
                 _this.showPictures(albumId);
