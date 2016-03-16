@@ -14,7 +14,7 @@ app.pictureViews = (function () {
             $('#add-picture').on('click', function () {
                 var createPictureDiv = $('<div>')
                     .addClass('add-picture-form');
-                var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture comment:');
+                var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
                 var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
                 var uploadLabel = $('<label>').attr('for', 'picture-upload').addClass('picture-upload').text('Choose File');
                 var pictureFile = $('<input>').attr({
