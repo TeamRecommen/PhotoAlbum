@@ -89,7 +89,6 @@ var app = app || {};
         });
 
         this.bind('update-album-rating', function(e, data){
-            console.log(data.albumId);
             albumController.updateAlbumRating(data.albumId)
         });
     });

@@ -32,7 +32,6 @@ app.albumController = (function () {
         var _this = this;
         this._model.getAlbumById(albumId)
             .then(function(success){
-                console.log(success);
                 success.rating++;
                 _this._model.updateAlbum(albumId, success);
         }).done()
