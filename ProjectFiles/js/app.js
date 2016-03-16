@@ -83,7 +83,9 @@ var app = app || {};
             albumController.updateBackgroundPicture(data);
         });
 
-
+        this.bind('update-pic-rating', function (e, data) {
+            picturesController.updatePicture(data);
+        });
     });
 
     scope.router.run('#/');

@@ -41,6 +41,15 @@ app.pictureController = (function () {
         //    })
     };
 
+    PictureController.prototype.updatePicture = function (data) {
+        var _this = this,
+            albumId = data.albumId,
+            obj = app.pictureInputModel(data),
+            pictureOutputModel = obj.getPictureInputModel();
+
+        this._model.updatePicture(pictureOutputModel);
+        _this.showPictures(albumId);
+    };
 
     return {
         load: function (model, viewBag) {

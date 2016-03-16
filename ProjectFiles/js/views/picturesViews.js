@@ -75,6 +75,12 @@ app.pictureViews = (function () {
             $('.main-section').append(rendered);
             $('#close-overlay').on('click', function () {
                 $('#gallery-overlay').remove();
+            });
+            $('.picture-like-button').on('click', function() {
+                outputObj.rating++;
+                $.sammy(function() {
+                    this.trigger('update-pic-rating', outputObj);
+                })
             })
         })
     };
