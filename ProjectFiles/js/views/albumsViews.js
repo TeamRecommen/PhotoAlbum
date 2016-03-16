@@ -37,19 +37,20 @@ app.albumViews = (function () {
 
     AlbumsViews.prototype.showTopAlbums = function showTopAlbums(data) {
         var json = {
-            albums:data
+            albums: data
         };
 
         $.get('templates/homeTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
-        }).then(function(){
-            $('.gallery-view').on('click', function () {
-                var albumId = $(this).attr('data-id');
-                $.sammy(function () {
-                    this.trigger('redirectUrl', {url: '#/albums/' + albumId});
-                });
-            })}
+        }).then(function () {
+                $('.gallery-view').on('click', function () {
+                    var albumId = $(this).attr('data-id');
+                    $.sammy(function () {
+                        this.trigger('redirectUrl', {url: '#/albums/' + albumId});
+                    });
+                })
+            }
         );
 
     };
