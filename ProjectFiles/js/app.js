@@ -49,6 +49,7 @@ var app = app || {};
 
         this.get('#/albums/:albumId', function () {
             picturesController.showPictures(this.params['albumId']);
+            scope.showHideLogout();
         });
 
         this.get('#/logout', function () {
