@@ -33,9 +33,10 @@ app.pictureController = (function () {
             obj = app.pictureInputModel(data),
             pictureOutputModel = obj.getPictureInputModel();
 
-        this._model.addNewPicture(pictureOutputModel).then(
-            _this.showPictures(albumId)
-        )
+        this._model.addNewPicture(pictureOutputModel)
+            .then(function() {
+                _this.showPictures(albumId);
+            })
     };
 
     PictureController.prototype.updatePicture = function (data) {
