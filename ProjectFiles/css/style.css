@@ -146,6 +146,7 @@ body {
 
 .main-nav a {
     padding: 10px 20px;
+    -webkit-transition: all .35s;
     transition: all .35s;
     color: inherit;
 }
@@ -221,6 +222,7 @@ a.active-nav {
     margin-top: 1%;
     cursor: pointer;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all .35s;
     transition: all .35s;
 }
 
@@ -238,6 +240,7 @@ a.active-nav {
     width: 220px;
     height: 220px;
     padding-top: 100px;
+    -webkit-transition: all .35s;
     transition: all .35s;
 }
 
@@ -292,6 +295,7 @@ a.active-nav {
     width: 0;
     height: 0;
     opacity: 0;
+    filter: alpha(opacity=0);
     overflow: hidden;
     position: absolute;
     z-index: -1;
@@ -427,6 +431,8 @@ a.active-nav {
     position: relative;
     top: 30%;
     left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-30%);
+    -ms-transform: translateX(-50%) translateY(-30%);
     transform: translateX(-50%) translateY(-30%);
 }
 
