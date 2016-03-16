@@ -15,6 +15,10 @@ app.picturesModel = (function () {
         return this.requester.post(this.serviceUrl, picture, true)
     };
 
+    PicturesModel.prototype.updatePicture = function (picture) {
+        return this.requester.put(this.serviceUrl, picture, true);
+    };
+
     return {
         load: function (requester) {
             return new PicturesModel(requester)
