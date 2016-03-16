@@ -79,8 +79,12 @@ var app = app || {};
 
 
         this.bind('add-picture', function (e, data) {
+            var liNumber = $('.gallery-grid').children().length;
             picturesController.addPicture(data);
-            albumController.updateBackgroundPicture(data);
+
+            if (liNumber==1){
+                albumController.updateBackgroundPicture(data);
+            }
         });
 
         this.bind('update-pic-rating', function (e, data) {
