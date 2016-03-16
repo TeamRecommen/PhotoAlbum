@@ -453,6 +453,7 @@ a.active-nav {
 .picture-like-button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .picture-like-button img {

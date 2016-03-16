@@ -41,7 +41,12 @@ app.pictureViews = (function () {
             });
         }).then(function () {
             $('.single-picture').on('click', function () {
-                _this.singlePicturePopup(data);
+                var photoId = $(this).attr('data-id');
+                var info = {
+                    allPics: data,
+                    currentPicId: photoId
+                };
+                _this.singlePicturePopup(info);
             });
         });
 
@@ -55,6 +60,10 @@ app.pictureViews = (function () {
     };
 
     PictureViews.prototype.singlePicturePopup = function (data) {
+        var currentPic = data.allPics;
+        for (var pic in currentPic) {
+            console.log(currentPic[pic]);
+        }
         $.get('templates/singlePictureTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, data);
             $('.main-section').append(rendered);
