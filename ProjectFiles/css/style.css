@@ -446,3 +446,20 @@ a.active-nav {
     padding: 10px;
 }
 
+.single-picture {
+    line-height: 100%;
+}
+
+.picture-like-button {
+    background: none;
+    border: none;
+}
+
+.picture-like-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.picture-name, .picture-rating {
+    font-size: 0.9em;
+}
