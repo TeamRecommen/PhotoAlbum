@@ -15,10 +15,12 @@ app.galleryPopup = (function () {
         var imageSrc = $(this).find('img').attr('src');
         var imagePreview = $('<img>').attr('src', imageSrc).addClass('image-preview');
 
-        imageHolder.append(imagePreview);
+        var commentSection = $('<div>').addClass('comment-section').text('Comment section here');
+
 
         closeOverlay.append(closeImage);
-        overlay.append(closeOverlay, imageHolder);
+        imageHolder.append(imagePreview, closeOverlay, commentSection);
+        overlay.append(imageHolder);
         $('.main-section').append(overlay);
     })
 

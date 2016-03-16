@@ -413,12 +413,12 @@ a.active-nav {
 
 .close-overlay {
     display: block;
-    position: absolute;
-    top: 100px;
-    right: 100px;
     width: 40px;
     height: 40px;
     cursor: pointer;
+    position: absolute;
+    top: -35px;
+    right: -45px;
 }
 
 .single-image_holder {
@@ -427,7 +427,7 @@ a.active-nav {
     height: 600px;
     background-color: #fff;
     position: relative;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
@@ -435,5 +435,14 @@ a.active-nav {
 .image-preview {
     width: 100%;
     height: 100%;
+    padding: 10px;
+}
+
+.comment-section {
+    width: 100%;
+    position: relative;
+    top: -10px;
+    background-color: #fff;
+    padding: 10px;
 }
 
