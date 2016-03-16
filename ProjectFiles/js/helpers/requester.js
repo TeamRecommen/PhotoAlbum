@@ -15,6 +15,10 @@ app.requester = (function () {
         return this.makeRequest('POST', url, data, useSession);
     };
 
+    Requester.prototype.put = function (url, data, useSession){
+        return this.makeRequest('PUT', url, data, useSession);
+    };
+
     Requester.prototype.makeRequest = function(method, url, data, useSession) {
         var token,
             defer = Q.defer(),

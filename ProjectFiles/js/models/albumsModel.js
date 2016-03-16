@@ -10,8 +10,18 @@ app.albumsModel = (function () {
         return this.requester.get(this.serviceUrl, true)
     };
 
+    AlbumsModel.prototype.getAlbumById = function getAlbumById (id) {
+        var requestUrl = this.serviceUrl + '/' + id;
+        return this.requester.get(requestUrl, true)
+    };
+
     AlbumsModel.prototype.addNewAlbum = function addAlbum(album) {
         return this.requester.post(this.serviceUrl, album, true)
+    };
+
+    AlbumsModel.prototype.updateAlbum = function updateAlbum (id, data) {
+        var requestUrl = this.serviceUrl + '/' + id;
+        return this.requester.put(requestUrl, data, true)
     };
 
     return {

@@ -79,6 +79,7 @@ var app = app || {};
 
         this.bind('add-picture', function (e, data) {
             picturesController.addPicture(data);
+            albumController.updateBackgroundPicture(data);
         });
 
 
