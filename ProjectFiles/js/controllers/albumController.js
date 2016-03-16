@@ -33,7 +33,6 @@ app.albumController = (function () {
         _this._model.getAlbumById(data.albumId).then(function(album){
                 album.isEmpty = false;
                 album.backGroundPicture = data.base64data;
-                console.log(_this);
                 _this._model.updateAlbum(data.albumId, album)
         }).done();
     };

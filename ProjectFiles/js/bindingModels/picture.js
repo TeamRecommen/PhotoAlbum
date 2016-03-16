@@ -3,15 +3,11 @@ var app = app || {};
 (function (scope) {
     var PictureInputModel = function(data) {
         this._albumId = data.albumId;
-<<<<<<< HEAD
         this.rating = 0;
         this._comment = data.comment;
-=======
         this.rating = data.rating;
-        this.comment = '';
->>>>>>> f4f4671aff047eead6cbd4049368cdd6b3472953
         this._data = data.base64data;
-        this._name = sessionStorage.username,
+        this._name = sessionStorage.username;
         this._id = data._id
     };
 
