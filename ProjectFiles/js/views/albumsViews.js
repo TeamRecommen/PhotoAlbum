@@ -40,6 +40,7 @@ app.albumViews = (function () {
             albums: data
         };
 
+
         $.get('templates/homeTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, json);
             $('.main-section').html(rendered);
