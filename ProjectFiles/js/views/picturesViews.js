@@ -17,7 +17,10 @@ app.pictureViews = (function () {
                 var nameLabel = $('<label>').attr('for', 'picture-name').text('Picture title:');
                 var pictureName = $('<input>').attr('id', 'picture-name').addClass('picture-name');
                 var uploadLabel = $('<label>').attr('for', 'picture-upload').addClass('picture-upload').text('Choose File');
-                var pictureFile = $('<input>').attr({type: 'file', id: 'picture-upload'}).addClass('picture-input').change(function(){
+                var pictureFile = $('<input>').attr({
+                    type: 'file',
+                    id: 'picture-upload'
+                }).addClass('picture-input').change(function () {
                     var reader = new FileReader(),
                         file = this.files[0];
 
@@ -27,15 +30,18 @@ app.pictureViews = (function () {
                         })
                     }, false);
 
-                    if (file){
+                    if (file) {
                         reader.readAsDataURL(file);
                     }
                 });
-                
+
                 createPictureDiv.append(nameLabel, pictureName, uploadLabel, pictureFile);
                 $(this).parent().empty().append(createPictureDiv);
             });
+        }).then(function () {
+            app.galleryPopup();
         });
+
     };
 
     PictureViews.prototype.showTopPictures = function (data) {
