@@ -14,6 +14,7 @@ app.albumViews = (function () {
             $('#create-album').on('click', function () {
                 var createAlbumDiv = $('<div>')
                     .addClass('create-album-form')
+                    .append($('<h3>').text('Create album'))
                     .append($('<input>').attr('placeholder', 'Album Name').attr('id', 'album-name'))
                     .append($('<button>').text('Create').on('click', function () {
                         var name = $('#album-name').val();

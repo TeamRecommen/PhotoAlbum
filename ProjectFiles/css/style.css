@@ -244,6 +244,10 @@ a.active-nav {
     transition: all .35s;
 }
 
+.create-album-form button {
+    margin-top: 10px;
+}
+
 .create-album_overlay {
     display: none;
     position: absolute;
