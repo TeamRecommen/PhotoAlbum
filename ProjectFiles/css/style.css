@@ -421,3 +421,14 @@ a.active-nav {
     cursor: pointer;
 }
 
+.single-image_holder {
+    display: block;
+    width: 600px;
+    height: 600px;
+    background-color: #fff;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
