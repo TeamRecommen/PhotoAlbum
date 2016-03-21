@@ -1,36 +1,35 @@
-var app = app || {};
+define(['sammy'], function(Sammy){
+    return (function () {
+        function UserViews(){
+            this.selector = $('.main-section');
+        }
 
-app.userViews = (function () {
-    function showLoginPage(selector) {
-        $.get('templates/loginTemplate.html', function (templ) {
-            $(selector).html(templ);
-            $('#login-button').on('click', function () {
+        UserViews.prototype.showLoginPage = function showLoginPage() {
+            var _this = this;
+            $.get('templates/loginTemplate.html', function (templ) {
+                _this.selector.html(templ);
+                $('#login-button').on('click', function () {
 
-                var username = $('#login-username').val(),
-                    password = $('#login-password').val();
+                    var username = $('#login-username').val(),
+                        password = $('#login-password').val();
 
-                $.sammy(function () {
-                    this.trigger('login', {username: username, password: password});
+                    Sammy(function () {
+                        this.trigger('login', {username: username, password: password});
+                    });
                 });
-            });
 
-            $('#register-button').on('click', function() {
+                $('#register-button').on('click', function() {
 
-                var regUsername = $('#register-username').val(),
-                    regPassword = $('#register-password').val();
+                    var regUsername = $('#register-username').val(),
+                        regPassword = $('#register-password').val();
 
-                $.sammy(function() {
-                    this.trigger('register', {username: regUsername, password: regPassword})
+                    Sammy(function() {
+                        this.trigger('register', {username: regUsername, password: regPassword})
+                    })
                 })
             })
-        })
-    }
+        };
 
-    return {
-        load: function () {
-            return {
-                showLoginPage: showLoginPage
-            }
-        }
-    }
-}());
+        return new UserViews();
+    }());
+});

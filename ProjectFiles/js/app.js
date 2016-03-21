@@ -1,54 +1,61 @@
-var app = app || {};
+(function () {
+    require.config({
+        paths: {
+            jquery: 'libs/jquery-2.2.1',
+            mustache: 'libs/mustache',
+            q: 'libs/q',
+            sammy: 'libs/sammy-latest.min',
+            album: 'bindingModels/album',
+            picture: 'bindingModels/picture',
+            albumController: 'controllers/albumController',
+            userController: 'controllers/userController',
+            pictureController: 'controllers/picturesController',
+            galleryPopup: 'helpers/galleryPopup',
+            menuChanger: 'helpers/menuChanger',
+            requester: 'helpers/requester',
+            albumModel: 'models/albumsModel',
+            userModel: 'models/userModel',
+            pictureModel: 'models/picturesModel',
+            userView: 'views/userViews',
+            pictureView: 'views/picturesViews',
+            albumView: 'views/albumsViews'
+        }
+    })
+})();
 
-(function (scope) {
 
-    // sammy routing
-    scope.router = Sammy(function () {
-        var requester = scope.requester.config('kid_Z1d1z2oEJ-', '1796d478bcf54ef8b10abddde51bfc45');
-        var selector = $('.main-section'),
-
-            albumsModel = scope.albumsModel.load(requester),
-            usersModel = scope.userModel.load(requester),
-            picturesModel = scope.picturesModel.load(requester),
-
-            albumViewBag = scope.albumViews.load(),
-            userViewBag = scope.userViews.load(),
-            picturesViewBag = scope.pictureViews.load(),
-
-
-            albumController = scope.albumController.load(albumsModel, albumViewBag),
-            userController = scope.userController.load(usersModel, userViewBag),
-            picturesController = scope.pictureController.load(picturesModel, picturesViewBag);
+require(['albumController', 'pictureController', 'userController', 'menuChanger', 'sammy'],
+function(albumController, pictureController, userController, menuChanger, Sammy){
+    var router = Sammy(function () {
 
         this.before(function(){
-            scope.showHideLogout();
+            menuChanger.showHideLogout();
         });
 
         this.get('#/', function () {
             if (!sessionStorage['sessionAuth']) {
-                userController.loadLoginPage(selector);
+                userController.loadLoginPage();
             } else {
                 albumController.showAlbumsByRating()
             }
-            scope.changeActiveMenu('home-nav');
-
+            menuChanger.changeActiveMenu('home-nav');
         });
 
         this.get('#/albums', function () {
             albumController.showAlbums();
-            scope.changeActiveMenu('albums-nav');
+            menuChanger.changeActiveMenu('albums-nav');
         });
 
         this.get('#/about', function () {
             $.get('templates/aboutTemplate.html', function (content) {
-                selector.html(content);
+                $('.main-section').html(content);
             });
-            scope.changeActiveMenu('about-nav');
+            menuChanger.changeActiveMenu('about-nav');
 
         });
 
         this.get('#/albums/:albumId', function () {
-            picturesController.showPictures(this.params['albumId']);
+            pictureController.showPictures(this.params['albumId']);
         });
 
         this.get('#/logout', function () {
@@ -68,7 +75,7 @@ var app = app || {};
         });
 
         this.bind('show-album', function (e, data) {
-            picturesController.showPictures(data.album);
+            pictureController.showPictures(data.album);
         });
 
         this.bind('register', function (e, data) {
@@ -78,7 +85,7 @@ var app = app || {};
 
         this.bind('add-picture', function (e, data) {
             var liNumber = $('.gallery-grid').children().length;
-            picturesController.addPicture(data);
+            pictureController.addPicture(data);
 
             if (liNumber==1){
                 albumController.updateBackgroundPicture(data);
@@ -86,7 +93,7 @@ var app = app || {};
         });
 
         this.bind('update-pic-rating', function (e, data) {
-            picturesController.updatePicture(data);
+            pictureController.updatePicture(data);
         });
 
         this.bind('update-album-rating', function(e, data){
@@ -94,8 +101,8 @@ var app = app || {};
         });
     });
 
-    scope.router.run('#/');
-})(app);
+    router.run('#/');
+});
 
 
 
