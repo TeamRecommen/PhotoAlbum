@@ -10,7 +10,6 @@
             albumController: 'controllers/albumController',
             userController: 'controllers/userController',
             pictureController: 'controllers/picturesController',
-            galleryPopup: 'helpers/galleryPopup',
             menuChanger: 'helpers/menuChanger',
             requester: 'helpers/requester',
             albumModel: 'models/albumsModel',
